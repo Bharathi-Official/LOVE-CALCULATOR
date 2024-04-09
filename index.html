@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Love Calculator</h1> 
+	
+    
+        <input type="text" id="sname" placeholder="Enter your name">
+        <input type="text" id="fname" placeholder="Enter your partner's name">
+        <div  class="button-container">
+            <button id="calculate-btn">Calculate</button>
+            <button class="reset" type="submit">Reset</button>
+
+        </div>
+       
+        <div class="result-container" id="result-container"></div>
+    </div>
+
+    <script>
+        document.getElementById('calculate-btn').addEventListener('click', async () => {
+            const sname = document.getElementById('sname').value;
+            const fname = document.getElementById('fname').value;
+            try {
+                const result = await fetchLovePercentage(sname, fname);
+                displayResult(result);
+            } catch (error) {
+                console.error('Error:', error);
+                displayError('Failed to calculate love percentage');
+            }
+        });
+
+        async function fetchLovePercentage(sname, fname) {
+            const url = `https://love-calculator.p.rapidapi.com/getPercentage?sname=${sname}&fname=${fname}`;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'b59c60d7f3msh3564d60c0095965p1060e8jsn315bc5278807',
+                    'X-RapidAPI-Host': 'love-calculator.p.rapidapi.com'
+                }
+            };
+            const response = await fetch(url, options);
+            return response.json();
+        }
+
+        function displayResult(result) {
+            const resultContainer = document.getElementById('result-container');
+            resultContainer.innerHTML = `<p>Love Percentage: ${result.percentage}%</p><p>${result.result}</p>`;
+        }
+
+        function displayError(message) {
+            const resultContainer = document.getElementById('result-container');
+            resultContainer.innerHTML = `<p>${message}</p>`;
+        }
+    </script>
+</body>
+</html>

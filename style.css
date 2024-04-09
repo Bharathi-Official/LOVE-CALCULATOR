@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Itim", cursive;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(75,17,69);
+    background: linear-gradient(90deg, rgba(75,17,69,1) 0%, rgba(255,0,82,1) 51%, rgba(75,17,69,1) 100%);
+}
+
+nav {
+    top: 0;
+}
+
+.container {
+    background-color: #e6e6fa; 
+    border-radius: 15px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+background: rgb(255,0,229);
+background: linear-gradient(90deg, rgba(255,0,229,0.4290091036414566) 0%, rgba(255,0,198,1) 0%, rgba(150,14,140,1) 100%);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	width:50%;
+	height:60%;
+}
+
+h1 {
+    display: block;
+    color:white;
+    font-family: "Patrick Hand", cursive;
+    font-style: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 200px;
+  
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ff40a1;
+ /* New background color */
+    color: #fff; /* New text color */
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+     /* New background color on hover */
+     background-color: #ff6ec7;
+     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+
+.result-container {
+    margin-top: 20px;
+}
+@media screen and (max-width: 500px) {
+    .container {
+     width:70% ;
+    }
+}
+@media screen and (min-height: 500px) {
+    .container {
+   height:60% ;
+    }
+}
+@media screen and (min-height: 600px) {
+    .container {
+   height:50% ;
+    }
+}
+@media screen and (min-height: 700px) {
+    .container {
+   height:40% ;
+    }
+}
+@media screen and (max-width: 500px) {
+    .container {
+     width:80% ;
+    }
+}
+p{
+    color: white;
+}
+@media screen and (max-width: 300px) {
+    .container {
+   width: 80%;
+    }
+    h1{
+        font-size: 20px;
+    }
+    *{
+        font-size: 10px;
+    }
+    button{
+        font-size: 8px;
+    }
+}
